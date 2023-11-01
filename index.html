@@ -6,22 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aidan Van Duyne</title>
   <style>
+    html,
     body {
       font-family: 'Courier New', monospace;
       background-color: #121212;
       /* Dark background color */
       margin: 0;
       padding: 0;
+      height: 100%;
       overflow: hidden;
     }
 
     #floating-window {
-      position: fixed;
-      bottom: -100%;
-      /* Start off the screen */
-      left: 50%;
-      transform: translateX(-50%);
       width: 80%;
+      height: 80%;
       background-color: #222;
       /* Dark window background color */
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -30,7 +28,62 @@
       text-align: center;
       color: #fff;
       /* White text color */
-      transition: bottom 1s ease-in-out;
+      overflow: auto;
+      animation: fadeIn 2s;
+      -webkit-animation: fadeIn 2s;
+      -moz-animation: fadeIn 2s;
+      -o-animation: fadeIn 2s;
+      -ms-animation: fadeIn 2s;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-ms-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
 
     h1 {
@@ -62,7 +115,7 @@
       /* Teal color for info text */
     }
 
-    .links {
+    w .links {
       margin-top: 1rem;
     }
 
@@ -80,41 +133,33 @@
 </head>
 
 <body>
-  <div id="floating-window">
-    <h1>Aidan Van Duyne</h1>
-    <p>I am a developer with a passion for creating interesting things.</p>
-    <div class="info">
-      <p>Location: Orlando, Florida / Los Angeles, California</p>
+  <div style="display:flex; justify-content:center; align-items:center;height:100%; width:100%; overflow:scroll">
+    <div id="floating-window">
+      <h1>Aidan Van Duyne</h1>
+      <p>I am a developer with a passion for creating interesting things.</p>
+      <div class="info">
+        <p>Location: Orlando, Florida / Los Angeles, California</p>
+        <div class="links">
+          <a href="mailto:aidanvanduyne@gmail.com">Email: aidanvanduyne@gmail.com</a>
+        </div>
+      </div>
+      <h2>Skills</h2>
+      <ul>
+        <li style="color: #ffbb33;">React, Leptos, Flutter, Linux, AppsScript, OpenCV, Soldering, CAD, 3D Printing,
+          Arduino</li> <!-- Yellow-->
+        <li style="color: #ff5733;">Kotlin, Java, C++, Rust, Dart, JavaScript, Python, C#</li> <!-- Orange-->
+        <li style="color: #00bfa6;">Leadership Skills, Agile Development, Teamwork, Problem Solving</li> <!-- Teal-->
+      </ul>
+      <h2>Education</h2>
+      <p>Bachelor of Science in Computer Science and Engineering</p>
+      <p>University of California, Los Angeles, Expected 2027</p>
       <div class="links">
-        <a href="mailto:aidanvanduyne@gmail.com">Email: aidanvanduyne@gmail.com</a>
+        <a href="https://www.linkedin.com/in/aidan-van-duyne-8a9080264/">LinkedIn</a>
+        <a href="https://github.com/aidanv">GitHub</a>
+        <a href="resume.pdf">Resume</a>
       </div>
     </div>
-    <h2>Skills</h2>
-    <ul>
-      <li style="color: #ffbb33;">React, Leptos, Flutter, Linux, AppsScript, OpenCV, Soldering, CAD, 3D Printing,
-        Arduino</li> <!-- Yellow-->
-      <li style="color: #ff5733;">Kotlin, Java, C++, Rust, Dart, JavaScript, Python, C#</li> <!-- Orange-->
-      <li style="color: #00bfa6;">Leadership Skills, Agile Development, Teamwork, Problem Solving</li> <!-- Teal-->
-    </ul>
-    <h2>Education</h2>
-    <p>Bachelor of Science in Computer Science and Engineering</p>
-    <p>University of California, Los Angeles, Expected 2027</p>
-    <div class="links">
-      <a href="https://www.linkedin.com/in/aidan-van-duyne-8a9080264/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/aidanv" target="_blank">GitHub</a>
-      <a href="my-resume.pdf" target="_blank">Resume</a>
-    </div>
   </div>
-
-  <script>
-    window.addEventListener('load', function () {
-      var floatingWindow = document.getElementById('floating-window');
-      // Use a setTimeout to initiate the sliding animation after a brief delay
-      setTimeout(function () {
-        floatingWindow.style.bottom = '20%';
-      }, 100); // Adjust the delay (in milliseconds) as needed
-    });
-  </script>
 </body>
 
 </html>
